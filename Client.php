@@ -18,19 +18,26 @@ class Client extends Component
 	private $_client;
 
 	/**
+	 * @param string $url
 	 * @param array $config
 	 */
-	public function __construct($config = [])
+	public function __construct($url, $config = [])
 	{
+		$this->url = $url;
+		$this->_client = new \SoapClient($this->url);
 		parent::__construct($config);
 	}
 
-	/**
-	 * @return \SoapClient|void
-	 */
 	public function init()
 	{
 		parent::init();
-		return new \SoapClient($this->url);
+	}
+
+	/**
+	 * @return \SoapClient
+	 */
+	public function getClient()
+	{
+		return $this->_client;
 	}
 } 
