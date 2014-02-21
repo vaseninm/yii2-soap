@@ -4,23 +4,33 @@ namespace subdee\soapclient;
 
 use yii\base\Component;
 
+/**
+ * The Client class for the consumer.
+ *
+ * @package subdee\soapclient
+ */
 class Client extends Component
 {
-	public $url = 'http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL';
+	/**
+	 * @var string $url The URL of the WSDL
+	 */
+	public $url;
 	private $_client;
 
+	/**
+	 * @param array $config
+	 */
 	public function __construct($config = [])
 	{
 		parent::__construct($config);
 	}
 
+	/**
+	 * @return \SoapClient|void
+	 */
 	public function init()
 	{
-		$this->_client = new \SoapClient($this->url);
-	}
-
-	public function getClient()
-	{
-		return $this->_client;
+		parent::init();
+		return new \SoapClient($this->url);
 	}
 } 
