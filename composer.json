@@ -1,0 +1,22 @@
+{
+	"name": "subdee/yii2-soap-client",
+	"description": "SOAP client/consumer for the Yii 2 framework",
+	"keywords": ["yii", "framework", "soap", "consumer"],
+	"homepage": "http://www.yiiframework.com/",
+	"type": "project",
+	"license": "BSD-3-Clause",
+	"support": {
+		"issues": "https://github.com/subdee/yii2-soap-client/issues?state=open",
+		"forum": "http://www.yiiframework.com/forum/",
+		"wiki": "http://www.yiiframework.com/wiki/",
+		"source": "https://github.com/subdee/yii2-soap-client"
+	},
+	"minimum-stability": "dev",
+	"require": {
+		"ext-soap": "*",
+		"yiisoft/yii2": "*"
+	},
+	"autoload": {
+		"psr-4": {"subdee\\soapclient\\": ""}
+	}
+}
