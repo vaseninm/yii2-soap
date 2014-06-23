@@ -1,6 +1,6 @@
 <?php
 
-namespace subdee\soapclient;
+namespace vaseninm\soap\Client;
 
 use yii\base\Component;
 
@@ -21,9 +21,9 @@ class Client extends Component
 	 * @param string $url
 	 * @param array $config
 	 */
-	public function __construct($url, $config = [])
+	public function __construct($config = [])
 	{
-		$this->url = $url;
+		$this->url = $config['url'];
 		$this->_client = new \SoapClient($this->url);
 		parent::__construct($config);
 	}
