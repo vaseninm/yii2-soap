@@ -1,43 +1,41 @@
 <?php
 
-namespace vaseninm\soap;
+    namespace vaseninm\soap;
 
-use yii\base\Component;
+    use yii\base\Component;
 
-/**
- * The Client class for the consumer.
- *
- * @package subdee\soapclient
- */
-class Client extends Component
-{
-	/**
-	 * @var string $url The URL of the WSDL
-	 */
-	public $url;
-	private $_client;
+    /**
+     * The Client class for the consumer.
+     *
+     * @package subdee\soapclient
+     */
+    class Client extends Component
+    {
+        /**
+         * @var string $url The URL of the WSDL
+         */
+        public $url;
+        /**
+         * @var array {@link http://www.php.net/manual/en/soapclient.soapclient.php}
+         */
+        public $params = [];
 
-	/**
-	 * @param string $url
-	 * @param array $config
-	 */
-	public function __construct($config = [])
-	{
-		$this->url = $config['url'];
-		$this->_client = new \SoapClient($this->url);
-		parent::__construct($config);
-	}
+        private $_client;
 
-	public function init()
-	{
-		parent::init();
-	}
+        public function  __call($name, $params)
+        {
+            return $this->getClient()->{$name}($params);
+        }
 
-	/**
-	 * @return \SoapClient
-	 */
-	public function getClient()
-	{
-		return $this->_client;
-	}
-} 
+        /**
+         * @return \SoapClient
+         */
+        public function getClient()
+        {
+            if (! $this->_client) {
+                $this->_client = new \SoapClient($this->url, $this->params);
+            }
+
+            return $this->_client;
+        }
+    }
