@@ -16,6 +16,6 @@
 		"yiisoft/yii2": "*"
 	},
 	"autoload": {
-		"psr-4": {"vaseninm\\soap\\client\\": ""}
+		"psr-4": {"vaseninm\\soap\\": ""}
 	}
 }

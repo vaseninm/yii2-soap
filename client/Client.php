@@ -1,6 +1,6 @@
 <?php
 
-namespace vaseninm\soap\Client;
+namespace vaseninm\soap;
 
 use yii\base\Component;
 
