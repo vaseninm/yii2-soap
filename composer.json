@@ -1,14 +1,14 @@
 {
-	"name": "vaseninm/yii2-soap-client",
+	"name": "vaseninm/yii2-soap",
 	"description": "SOAP client/consumer for the Yii 2 framework",
 	"keywords": ["yii", "framework", "soap", "consumer"],
-	"homepage": "https://github.com/vaseninm/yii2-soap-client",
+	"homepage": "https://github.com/vaseninm/yii2-soap",
 	"type": "project",
 	"license": "BSD-3-Clause",
 	"support": {
-		"issues": "https://github.com/vaseninm/yii2-soap-client/issues?state=open",
-		"wiki": "https://github.com/vaseninm/yii2-soap-client/wiki",
-		"source": "https://github.com/vaseninm/yii2-soap-client"
+		"issues": "https://github.com/vaseninm/yii2-soap/issues?state=open",
+		"wiki": "https://github.com/vaseninm/yii2-soap/wiki",
+		"source": "https://github.com/vaseninm/yii2-soap"
 	},
 	"minimum-stability": "dev",
 	"require": {
